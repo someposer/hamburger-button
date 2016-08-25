@@ -13,22 +13,29 @@ import UIKit
 class HamburgerButton : UIButton {
     let shortStroke: CGPath = {
         let path = CGMutablePath()
-        CGPathMoveToPoint(path, nil, 2, 2)
-        CGPathAddLineToPoint(path, nil, 28, 2)
+        path.move(to: CGPoint(x: 2, y: 2))
+        path.addLine(to: CGPoint(x: 28, y: 2))
 
         return path
     }()
 
     let outline: CGPath = {
         let path = CGMutablePath()
-        CGPathMoveToPoint(path, nil, 10, 27)
-        CGPathAddCurveToPoint(path, nil, 12.00, 27.00, 28.02, 27.00, 40, 27)
-        CGPathAddCurveToPoint(path, nil, 55.92, 27.00, 50.47,  2.00, 27,  2)
-        CGPathAddCurveToPoint(path, nil, 13.16,  2.00,  2.00, 13.16,  2, 27)
-        CGPathAddCurveToPoint(path, nil,  2.00, 40.84, 13.16, 52.00, 27, 52)
-        CGPathAddCurveToPoint(path, nil, 40.84, 52.00, 52.00, 40.84, 52, 27)
-        CGPathAddCurveToPoint(path, nil, 52.00, 13.16, 42.39,  2.00, 27,  2)
-        CGPathAddCurveToPoint(path, nil, 13.16,  2.00,  2.00, 13.16,  2, 27)
+        path.move(to: CGPoint(x: 10, y: 27))
+        path.addCurve(to: CGPoint(x: 40, y: 27), control1: CGPoint(x: 12.00, y: 27.00),
+                      control2: CGPoint(x: 28.02, y: 27.00))
+        path.addCurve(to: CGPoint(x: 27, y: 2), control1: CGPoint(x: 55.92, y: 27.00),
+                      control2: CGPoint(x: 50.47, y: 2.00))
+        path.addCurve(to: CGPoint(x: 2, y: 27), control1: CGPoint(x: 13.16, y: 2.00),
+                      control2: CGPoint(x: 2.00, y: 13.16))
+        path.addCurve(to: CGPoint(x: 27, y: 52), control1: CGPoint(x: 2.00, y: 40.84),
+                      control2: CGPoint(x: 13.16, y: 52.00))
+        path.addCurve(to: CGPoint(x: 52, y: 27), control1: CGPoint(x: 40.84, y: 52.00),
+                      control2: CGPoint(x: 52.00, y: 40.84))
+        path.addCurve(to: CGPoint(x: 27, y: 2), control1: CGPoint(x: 52.00, y: 13.16),
+                      control2: CGPoint(x: 42.39, y: 2.00))
+        path.addCurve(to: CGPoint(x: 2, y: 27), control1: CGPoint(x: 13.16, y: 2.00),
+                      control2: CGPoint(x: 2.00, y: 13.16))
 
         return path
     }()

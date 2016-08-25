@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         self.view.addSubview(button)
     }
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle  {
+    override var preferredStatusBarStyle: UIStatusBarStyle  {
         return .lightContent
     }
 
